@@ -59,6 +59,10 @@ class Tagger:
     buff = self.vectorizer.transform([clean(txt)])
     buff2 = self.reducer.transform(buff)
     return self.model.predict(buff2)[0]
+
 tagger = load('savetags.joblib')
-print("oui")
-print(tagger.get_tags(tagger.get_cluster("data doesn't work , how do i make data work in sql please ")))
+
+import uvicorn
+
+if __name__ == "__main__":
+    uvicorn.run("API:app", host="0.0.0.0", port=25566, reload=False, log_level="debug", workers=1, limit_concurrency=20, limit_max_requests=20)
