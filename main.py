@@ -65,4 +65,4 @@ tagger = load('savetags.joblib')
 import uvicorn
 
 if __name__ == "__main__":
-    uvicorn.run("API:app", host="0.0.0.0", port=25566, reload=False, log_level="debug", workers=1, limit_concurrency=20, limit_max_requests=20)
+    uvicorn.run("API:app", host="0.0.0.0", port=8000, reload=False, log_level="debug")
